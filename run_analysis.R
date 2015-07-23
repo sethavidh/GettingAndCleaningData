@@ -36,7 +36,7 @@ df_u <- df[,!duplicated(colnames(df))]
 data <- tbl_df(df_u)
 
 # extract subject activity means stds
-data_m <- select(data, subject, activity, matches("mean"), matches("std"))
+data_m <- select(data, subject, activity, matches("mean"), matches("std"), -matches("angle"))
 
 tidy_data <- group_by(data_m, activity, subject)
 result <- summarise_each(tidy_data, funs(mean))

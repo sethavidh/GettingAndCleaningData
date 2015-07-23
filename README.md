@@ -18,9 +18,10 @@ The script run_analysis.R will clean up the data and exports output to result.tx
 
 The code_book.txt explains the tidy data set in result.txt file.
 
-== The working of run_analysis.R ==
-1. Both test and train data sets are imported along with the activity label and subject that generated each observation.
-2. The data sets are combined together with activity label and subject into one data frame. Any column with duplicated name is removed. (They are not needed anyway.)
-3. The data frame is converted into tbl object using dplyr package. Then select() function of dplyr package is used to select only mean and std columns out.
-4. The data is grouped by activity and subject. Then the average of all readings from a single subject in a single activity is calculated. The process repeats for all combination of subjects and activities. 
-5. The result is written to result.txt file.
+##The working of run_analysis.R##
+
+* Both test and train data sets are imported along with the activity label and subject that generated each observation.
+* The data sets are combined together with activity label and subject into one data frame. Any column with duplicated name is removed. (They are not needed anyway.)
+* The data frame is converted into tbl object using dplyr package. Then select() function of dplyr package is used to select only mean and std columns out.
+* The data is grouped by activity and subject. Then the average of all readings from a single subject in a single activity is calculated. The process repeats for all combination of subjects and activities. 
+* The result is written to result.txt file.
